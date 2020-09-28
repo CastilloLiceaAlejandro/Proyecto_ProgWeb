@@ -1,0 +1,17 @@
+{% extends "base11.html" %}
+
+{% block title %}Lista{% endblock title %}
+{% block content %}
+    <table>
+      {% for item in object_list %}
+      <tr>
+        <td>{{item.ID_Juego}}</td>
+        <td>{{item.Nombre_Juego}}</td>
+        <td>{{item.Plataforma}}</td>
+        <td>{{item.Genero}}</td>
+        <td>{{item.ESRB}}</td>
+        <td>{{item.Precio}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+{% endblock content %}
