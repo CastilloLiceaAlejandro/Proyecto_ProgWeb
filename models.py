@@ -1,3 +1,7 @@
+from django.db import models
+
+# Create your models here.
+
 class Producto(models.Model):
     ID_Juego=models.IntegerField(primary_key=true)
     Nombre_Juego=models.CharField(max_length=40)
@@ -10,7 +14,8 @@ class Producto(models.Model):
     Puntuacion=model.IntegerField()
     Alta_Producto=models.DateField()
     Actualizacion_Producto=DateTimeField(auto_now=true)
-
+    def __str__(self):
+        return self.Nombre_Juego
 
 class Plataforma(models.Model):
     ID_Plataforma=models.IntegerField(primary_key=true)
@@ -21,12 +26,18 @@ class Plataforma(models.Model):
     RAM=models.CharField(max_length=5)
     Memoria_Interna=models.CharField(max_length=4)
     Energia=models.CharField(max_length=10)
+    def __str__(self):
+        return self.Plataforma
 
 class Desarrollador(models.Model):
     ID_Desarrollador=models.IntegerField(primary_key=true)
     ID_Juego=models.ForeignKey(Producto,on_delete=models.CASCADE)
     Nombre_Desarrollador=models.CharField(max_length=10)
+    def __str__(self):
+        return self.Nombre_Desarrollador
 
 class Stock(models.Model):
     ID_Juego=models.ForeignKey(Producto,on_delete=models.CASCADE)
     Cantidad=models.IntegerField()
+    def __str__(self):
+        return self.ID_Juego
