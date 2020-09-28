@@ -7,16 +7,16 @@ class Plataforma(models.Model):
     Plataforma=models.CharField(max_length=10)
     Empresa=models.CharField(max_length=20)
     CPU=models.CharField(max_length=30)
-    Frecuencia_CPU=models.CharField(max_length=5)
-    RAM=models.CharField(max_length=5)
-    Memoria_Interna=models.CharField(max_length=4)
+    Frecuencia_CPU=models.CharField(max_length=10)
+    RAM=models.CharField(max_length=10)
+    Memoria_Interna=models.CharField(max_length=10)
     Energia=models.CharField(max_length=10)
     def __str__(self):
         return self.Plataforma
 
 class Desarrollador(models.Model):
     ID_Desarrollador=models.IntegerField(primary_key=True)
-    Nombre_Desarrollador=models.CharField(max_length=10)
+    Nombre_Desarrollador=models.CharField(max_length=20)
     def __str__(self):
         return self.Nombre_Desarrollador
 
