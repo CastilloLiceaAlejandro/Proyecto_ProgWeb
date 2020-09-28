@@ -16,7 +16,7 @@ class Plataforma(models.Model):
 
 class Desarrollador(models.Model):
     ID_Desarrollador=models.IntegerField(primary_key=True)
-    Nombre_Desarrollador=models.CharField(max_length=20)
+    Nombre_Desarrollador=models.CharField(max_length=10)
     def __str__(self):
         return self.Nombre_Desarrollador
 
@@ -39,4 +39,5 @@ class Stock(models.Model):
     ID_Juego=models.ForeignKey(Producto,on_delete=models.CASCADE)
     Cantidad=models.IntegerField()
     def __str__(self):
-        return self.ID_Juego
+        cadena=self.ID_Juego+self.Cantidad
+        return self.cadena
