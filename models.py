@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Producto(models.Model):
-    ID_Juego=models.IntegerField(primary_key=true)
+    ID_Juego=models.IntegerField(primary_key=True)
     Nombre_Juego=models.CharField(max_length=40)
     Plataforma=models.ForeignKey(Plataforma,on_delete=models.CASCADE)
     Genero=models.CharField(max_length=10)
@@ -13,12 +13,12 @@ class Producto(models.Model):
     Fecha_Lanzamiento=models.DateField()
     Puntuacion=model.IntegerField()
     Alta_Producto=models.DateField()
-    Actualizacion_Producto=DateTimeField(auto_now=true)
+    Actualizacion_Producto=DateTimeField(auto_now=True)
     def __str__(self):
         return self.Nombre_Juego
 
 class Plataforma(models.Model):
-    ID_Plataforma=models.IntegerField(primary_key=true)
+    ID_Plataforma=models.IntegerField(primary_key=True)
     Plataforma=models.CharField(max_length=10)
     Empresa=models.CharField(max_length=20)
     CPU=models.CharField(max_length=30)
@@ -30,7 +30,7 @@ class Plataforma(models.Model):
         return self.Plataforma
 
 class Desarrollador(models.Model):
-    ID_Desarrollador=models.IntegerField(primary_key=true)
+    ID_Desarrollador=models.IntegerField(primary_key=True)
     ID_Juego=models.ForeignKey(Producto,on_delete=models.CASCADE)
     Nombre_Desarrollador=models.CharField(max_length=10)
     def __str__(self):
