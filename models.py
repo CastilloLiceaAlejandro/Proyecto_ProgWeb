@@ -39,5 +39,4 @@ class Stock(models.Model):
     ID_Juego=models.ForeignKey(Producto,on_delete=models.CASCADE)
     Cantidad=models.IntegerField()
     def __str__(self):
-        cadena=self.ID_Juego
-        return self.cadena
+        return self.ID_Juego
