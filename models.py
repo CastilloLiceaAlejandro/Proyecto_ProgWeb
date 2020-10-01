@@ -11,14 +11,24 @@ class Plataforma(models.Model):
     RAM=models.CharField(max_length=10)
     Memoria_Interna=models.CharField(max_length=10)
     Energia=models.CharField(max_length=10)
+
+    class Meta:
+        verbose_name_plural = "Plataformas"
+
     def __str__(self):
         return self.Plataforma
 
 class Desarrollador(models.Model):
     ID_Desarrollador=models.IntegerField(primary_key=True)
     Nombre_Desarrollador=models.CharField(max_length=10)
+
+    class Meta:
+        verbose_name_plural = "Desarrolladores"
+
     def __str__(self):
         return self.Nombre_Desarrollador
+
+
 
 class Producto(models.Model):
     ID_Juego=models.IntegerField(primary_key=True)
@@ -32,10 +42,15 @@ class Producto(models.Model):
     Puntuacion=models.IntegerField()
     Alta_Producto=models.DateField()
     Actualizacion_Producto=models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name_plural = "Productos"
+
     def __str__(self):
         return self.Nombre_Juego
 
 class Stock(models.Model):
     ID_Juego=models.ForeignKey(Producto,on_delete=models.CASCADE)
     Cantidad=models.IntegerField()
-    
+    def __str__(self):
+        return "{}".format(self.ID_Juego)
