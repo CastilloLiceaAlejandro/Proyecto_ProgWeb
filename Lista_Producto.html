@@ -1,8 +1,9 @@
-{% extends "base.html" %}
+{% extends "base11.html" %}
 
-{% block title %}ListaProductos{% endblock title%}
+{% block title %}ListaProductos{% endblock title %}
 
 {% block content %}
+<h1>Lista Productos</h1>
     <table class="table table-bordered">
       <th>Id Juego</th>
       <th>Nombre Juego</th>
@@ -15,7 +16,7 @@
       <th>Puntuacion</th>
       <th>Alta producto</th>
       {% for item in object_list %}
-      <tr>
+        <tr>
         <td>{{ item.ID_Juego }}</td>
         <td>{{ item.Nombre_Juego }}</td>
         <td>{{ item.Plataforma }}</td>
@@ -26,6 +27,9 @@
         <td>{{ item.Fecha_Lanzamiento }}</td>
         <td>{{ item.Puntuacion }}</td>
         <td>{{ item.Alta_Producto}}</td>
+        <td><button type="button" name="button" class="btn btn-success btn-circle"><i class="fas fa-save fa-sm"></button></td>
+        <td><button type="button" name="button" class="btn btn-danger btn-circle"><i class="fas fa-trash fa-sm"></button></td>
+        <td><button type="button" name="button" class="btn btn-warning btn-circle"><i class="fas fa-pen fa-sm"></button></td>
       </tr>
       {% endfor %}
     </table>
