@@ -1,16 +1,31 @@
-{% extends "base11.html" %}
+{% extends "base.html" %}
 
-{% block title %}Lista{% endblock title %}
+{% block title %}ListaProductos{% endblock title%}
+
 {% block content %}
-    <table>
+    <table class="table table-bordered">
+      <th>Id Juego</th>
+      <th>Nombre Juego</th>
+      <th>Plataforma</th>
+      <th>Genero</th>
+      <th>ESRB</th>
+      <th>Precio</th>
+      <th>Desarrollador</th>
+      <th>Fecha de salida</th>
+      <th>Puntuacion</th>
+      <th>Alta producto</th>
       {% for item in object_list %}
       <tr>
-        <td>{{item.ID_Juego}}</td>
-        <td>{{item.Nombre_Juego}}</td>
-        <td>{{item.Plataforma}}</td>
-        <td>{{item.Genero}}</td>
-        <td>{{item.ESRB}}</td>
-        <td>{{item.Precio}}</td>
+        <td>{{ item.ID_Juego }}</td>
+        <td>{{ item.Nombre_Juego }}</td>
+        <td>{{ item.Plataforma }}</td>
+        <td>{{ item.Genero }}</td>
+        <td>{{ item.ESRB }}</td>
+        <td>{{ item.Precio }}</td>
+        <td>{{ item.Nombre_Desarrollador }}</td>
+        <td>{{ item.Fecha_Lanzamiento }}</td>
+        <td>{{ item.Puntuacion }}</td>
+        <td>{{ item.Alta_Producto}}</td>
       </tr>
       {% endfor %}
     </table>
