@@ -52,5 +52,6 @@ class Producto(models.Model):
 class Stock(models.Model):
     ID_Juego=models.ForeignKey(Producto,on_delete=models.CASCADE)
     Cantidad=models.IntegerField()
+
     def __str__(self):
         return "{}".format(self.ID_Juego)
