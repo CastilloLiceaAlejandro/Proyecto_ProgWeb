@@ -27,9 +27,9 @@
         <td>{{ item.Fecha_Lanzamiento }}</td>
         <td>{{ item.Puntuacion }}</td>
         <td>{{ item.Alta_Producto}}</td>
-        <td><a href="{% url 'inv:detail' item.pk %}"><button type="button" name="button" class="btn btn-success btn-circle"><i class="fas fa-save fa-sm"></button></a></td>
-        <td><button type="button" name="button" class="btn btn-danger btn-circle"><i class="fas fa-trash fa-sm"></button></td>
-        <td><button type="button" name="button" class="btn btn-warning btn-circle"><i class="fas fa-pen fa-sm"></button></td>
+        <td><a href="{% url 'inv:detail' item.ID_Juego %}"><button type="button" name="button" class="btn btn-success btn-circle"><i class="fas fa-save fa-sm"></button></a></td>
+        <td><a href="{% url 'inv:delete' item.ID_Juego %}"><button type="button" name="button" class="btn btn-danger btn-circle"><i class="fas fa-trash fa-sm"></button></a></td>
+        <td><a href="{% url 'inv:update' item.ID_Juego %}"><button type="button" name="button" class="btn btn-warning btn-circle"><i class="fas fa-pen fa-sm"></button></a></td>
       </tr>
       {% endfor %}
     </table>
