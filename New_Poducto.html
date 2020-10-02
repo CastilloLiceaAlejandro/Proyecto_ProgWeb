@@ -1,0 +1,13 @@
+{% extends "base11.html" %}
+
+{% block title %}Nuevo Producto{% endblock title %}
+
+{% block content %}
+
+<form class="" action="" method="post">
+  {% csrf_token %}
+  {{ form }}
+  <button type="submit" name="new"><i class = "sa fa-save fa-sm"></button>
+</form>
+
+{% endblock content %}
