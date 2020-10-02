@@ -1,0 +1,30 @@
+{% extends "base11.html" %}
+
+{% block title %}DetalleProducto{% endblock title %}
+
+{% block content %}
+
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">{{ object.Nombre_Juego }}</h6>
+    </div>
+    <div class="card-body">
+    <h6>
+      ID Juego: {{ object.ID_Juego }}<br>
+      Plaforma: {{ object.Plataforma }}<br>
+      Genero: {{ object.Genero }}<br>
+      ESRB: {{ object.ESRB }}<br>
+      Precio: {{ object.Precio }}<br>
+      Desarrollador: {{ object.Nombre_Desarrollador }}<br>
+      Fecha de Lanzamiento: {{ object.Fecha_Lanzamiento }}<br>
+      Puntuacion: {{ object.Puntuacion }}
+    </h6>
+
+    <td><a href="{% url 'inv:list' %}"class="btn btn-link">Back</a></td>
+
+    </div>
+  </div>
+
+
+
+{% endblock content %}
