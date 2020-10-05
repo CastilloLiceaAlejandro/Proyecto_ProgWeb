@@ -34,6 +34,6 @@ class Update_Producto(generic.UpdateView):
 
 class Delete_Producto(generic.DeleteView):
 	template_name = "inv/Delete_Producto.html"
-	models = Producto
+	model = Producto
 	form_class = FormCreate
 	success_url = reverse_lazy("inv:list")
