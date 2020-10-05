@@ -28,8 +28,6 @@ class Desarrollador(models.Model):
     def __str__(self):
         return self.Nombre_Desarrollador
 
-
-
 class Producto(models.Model):
     ID_Juego=models.IntegerField(primary_key=True)
     Nombre_Juego=models.CharField(max_length=40)
