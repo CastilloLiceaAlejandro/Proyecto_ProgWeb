@@ -1,0 +1,30 @@
+{% extends "base11.html" %}
+
+{% block title %}DetallePlataforma{% endblock title %}
+
+{% block content %}
+
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">{{ object.Plaforma }}</h6>
+    </div>
+    <div class="card-body">
+    <h6>
+      ID Plataforma: {{ object.ID_Plataforma }} <br>
+      Nombre: {{ object.Plataforma }} <br>
+      Empresa: {{ object.Empresa }} <br>
+      CPU: {{ object.CPU }} <br>
+      Frecuencia CPU: {{ object.Frecuencia_CPU }} <br>
+      Capacidad de RAM: {{ object.RAM }} <br>
+      Almacenamiento: {{ object.Memoria_Interna }} <br>
+      Consumo: {{ object.Energia }}
+    </h6>
+
+    <td><a href="{% url 'inv:listplataforma' %}"class="btn btn-link">Back</a></td>
+
+    </div>
+  </div>
+
+
+
+{% endblock content %}
