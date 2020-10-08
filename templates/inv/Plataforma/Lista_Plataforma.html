@@ -1,0 +1,32 @@
+{% extends "base11.html" %}
+
+{% block title %}ListaPlataforma{% endblock title %}
+
+{% block content %}
+<h1>Lista Plataforma</h1>
+    <table class="table table-bordered">
+      <th>Id Plataforma</th>
+      <th>Plataforma</th>
+      <th>Empresa</th>
+      <th>CPU</th>
+      <th>Frecuancia del CPU</th>
+      <th>Memoria RAM</th>
+      <th>Memoria Interna</th>
+      <th>Consumo de Energia</th>
+      {% for item in object_list %}
+        <tr>
+        <td>{{ item.ID_Plataforma }}</td>
+        <td>{{ item.Plataforma }}</td>
+        <td>{{ item.Empresa }}</td>
+        <td>{{ item.CPU }}</td>
+        <td>{{ item.Frecuencia_CPU }}</td>
+        <td>{{ item.RAM }}</td>
+        <td>{{ item.Memoria_Interna }}</td>
+        <td>{{ item.Energia }}</td>
+        <td><a href="{% url 'inv:detailplataforma' item.ID_Plataforma %}"><button type="button" name="button" class="btn btn-success btn-circle"><i class="fas fa-save fa-sm"></button></a></td>
+        <td><a href="{% url 'inv:deleteplataforma' item.ID_Plataforma %}"><button type="button" name="button" class="btn btn-danger btn-circle"><i class="fas fa-trash fa-sm"></button></a></td>
+        <td><a href="{% url 'inv:updateplataforma' item.ID_Plataforma %}"><button type="button" name="button" class="btn btn-warning btn-circle"><i class="fas fa-pen fa-sm"></button></a></td>
+      </tr>
+      {% endfor %}
+    </table>
+{% endblock content %}
