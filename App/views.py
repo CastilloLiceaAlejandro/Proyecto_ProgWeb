@@ -71,10 +71,3 @@ class Delete_Plataforma(generic.DeleteView):
 	model = Plataforma
 	form_class = FormCreate_Plataforma
 	success_url = reverse_lazy("inv:listplataforma")
-
-###############################################3
-def list(request):
-	context= {
-		"Proyecto_producto": Producto.objects.all()
-	}
-	return render(request, "list.html", context)
