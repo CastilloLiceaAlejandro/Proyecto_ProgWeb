@@ -1,0 +1,15 @@
+{% extends "base11.html" %}
+
+{% block title %}Borrar Plataforma{% endblock title %}
+
+{% block content %}
+
+<form class="" action="" method="post">
+  {% csrf_token %}
+  <h6>Deseas borrar la plataforma?</h6>
+  {{ object.Plaforma }}
+  <button type="submit" name="deleteplataforma" class = "btn btn-danger btn-circle"><i class = "sa fa-trash fa-sm"></button>
+  <a href="{% url 'inv:listplataforma' %}" class = "btn btn-primary btn-circle"><i class = "sa fa-arrow-left fa-sm"></a>
+</form>
+
+{% endblock content %}
