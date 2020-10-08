@@ -4,9 +4,19 @@ from Proyecto import views
 app_name = "Proyecto"
 
 urlpatterns = [
-    path('list/', views.Lista_Producto.as_view(), name="list"),
-    path('detail/<int:pk>/', views.Detail_Producto.as_view(), name = "detail"),
+
+    ###                                 Producto                                  ###
+    path('listproducto/', views.Lista_Producto.as_view(), name="listproducto"),
+    path('detailproducto/<int:pk>/', views.Detail_Producto.as_view(), name = "detail"),
     path('newproducto/', views.New_Producto.as_view(), name = "newproducto"),
-    path('update/<int:pk>/', views.Update_Producto.as_view(), name = "update"),
-    path('delete/<int:pk>/', views.Delete_Producto.as_view(), name = "delete"),
+    path('updateproducto/<int:pk>/', views.Update_Producto.as_view(), name = "update"),
+    path('deleteproducto/<int:pk>/', views.Delete_Producto.as_view(), name = "delete"),
+
+    ###                                Plataforma                                 ###
+    path('listplataforma/', views.Lista_Plataforma.as_view(), name="listplataforma"),
+    path('detailplataforma/<int:pk>/', views.Detail_Plataforma.as_view(), name = "detailplataforma"),
+    path('newplataforma/', views.New_Plataforma.as_view(), name = "newplataforma"),
+    path('updateplataforma/<int:pk>/', views.Update_Plataforma.as_view(), name = "updateplataforma"),
+    path('deleteplataforma/<int:pk>/', views.Delete_Plataforma.as_view(), name = "deleteplataforma"),
+    
 ]
